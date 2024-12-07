@@ -34,7 +34,7 @@
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
-                    'Accept': 'application/vnd.github.v3+json',
+                  'Accept': 'application/vnd.github.v3+json',
                 }
             });
 
@@ -47,7 +47,7 @@
                const lastCommitDate = new Date(commits[0].commit.committer.date);
                 
                 // Displaying the time on load
-                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommiitDate.toLocaleString()}`;
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
             } else {
                 document.getElementById('last-updated').innerText = 'No Commits found in the repository';
             }
