@@ -67,6 +67,12 @@
       // Inital load to display the time on page load
       window.onload = getLastUpdatedTime;
   </script>
+  <!-- /////////////////////////////// -->
+  <!-- ///// Word count Function ///// -->
+  <!-- /////////////////////////////// -->
+  
+  <!-- Placeholder for total word count -->
+
   <head>
     <!style for tables>
       <style>
@@ -119,7 +125,43 @@
   </tr>
   </table>
   <body style="background-color:#FFFFFF;margin-left:50px;">
+  
+  <!-- /////////////////////////////// -->
+  <!-- ///// Word count Function ///// -->
+  <!-- /////////////////////////////// -->
+  
+  <!-- Placeholder for total word count -->
+  <p id="totalWordCount"></p>
+    
   <hr>
+
+  <script>
+    // Function to calculate and display word count for a specified section
+    function displayWordCount (sectionId, outputId) {
+      // Get the text content from the specified section
+      const wordArray = text.trim().split(/\s+/);
+
+      // Count the words
+      const wordCount = wordArray.length;
+
+      // Return word count for summing purposes
+      return wordCount;
+    }
+    // Function to calculate and display total word count from selected sections
+    function displayTotalWordCount() {
+      // Calculate word count for each section and accumulate the total
+      const IntroductionCount = displayWordCount("Introduction_InText");
+      const AnalysisCount = displayWordCount("Analysis_InText");
+      
+      // Calculate the sum of all selected sections
+      const totalWordCount = IntroductionCount + Analysis_Count;
+
+      // Display the total word count
+      document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+    }
+    // Run the function for specific sections and display total count when the page loads
+    window.onload = displayTotalWordCount;
+  </script>
   <p class="ex1">
     <h3 id="Abstract">Abstract</h3>
       <pre>
